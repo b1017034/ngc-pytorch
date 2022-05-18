@@ -1,7 +1,7 @@
 .PHONY: up down
 
 init:
-
+	git submodule update --init
 
 up:
 	docker-compose up -d
