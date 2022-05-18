@@ -1,0 +1,3 @@
+[submodule "shared/pix2pixHD"]
+	path = shared/pix2pixHD
+	url = https://github.com/b1017034/pix2pixHD.git

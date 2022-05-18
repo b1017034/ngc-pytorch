@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  nvidia:
+    volumes:
+      - './shared:/workspace/shared'
+    container_name: pytorch-pix2pixHD
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    shm_size: '7gb'
+    deploy:
+      resources:
+        reservations:
+          devices:
+           - driver: nvidia
+             capabilities: [utility, compute, video]
+    environment: 
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    tty: true
